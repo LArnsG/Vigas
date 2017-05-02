@@ -22,8 +22,9 @@ def dominios_y(height, cobrimento):
     x_3_lim = 0.63 * d
 
 
-def beam_design(fck, beam_name, height, width, length, load, cobrimento):
-    globals(fck, height, width, length, load, cobrimento)
+def beam_design():
+    global fck, fyd, height, width, length, load, cobrimento
+    # globals(fck, fyd, height, width, length, load, cobrimento)
     stresses = isostatic_stress(length, load)
     minimum_steel = minimum_steel_area(height, width)
 
@@ -31,6 +32,6 @@ def beam_design(fck, beam_name, height, width, length, load, cobrimento):
     d = height - cobrimento
     md = stresses['positive_moment'] * 1.4
     fcd = fck / 1.4
-    x = 1.25 * d * (1 - math.sqrt(1 - md / (0,425 * b * math.pow(d,2).fcd)))
-
+    x = 1.25 * d * (1 - math.sqrt(1 - md / (0.425 * b * math.pow(d, 2) * fcd)))
+    
 
