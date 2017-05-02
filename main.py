@@ -1,4 +1,5 @@
 import vigas_database as data
+import strutural_analysis as structural
 
 beam_name = input('Nome da viga:')
 height = int(input('Altura da viga [cm]:'))
@@ -10,8 +11,7 @@ cobrimento = int(input('Cobrimento da armadura (padrão = 2 cm): [cm]'))
 fyd = 50 / 1.4
 
 data.create_table()
-data.data_entry(beam_name, height, width, length, load, fck, cobrimento, 0, 0, 0)
+# data.data_entry(beam_name, height, width, length, load, fck, cobrimento, 0, 0, 0)
 
-
-
+structural.beam_design()
 
