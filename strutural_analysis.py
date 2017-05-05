@@ -17,11 +17,12 @@ def minimum_steel_area(height, width):
     return {'min': as_minimum, 'max': as_maximum}
 
 
-def dominios_y(d):
+def set_domains(d):
     # global x_2_lim, x_3_lim
     x_2_lim = 0.26 * d
     x_3_lim = 0.63 * d
-    return {'x23': x_2_lim, 'x34': x_3_lim}
+    x_lim = 0.45 * d
+    return {'x23': x_2_lim, 'x34': x_3_lim, 'xlim': x_lim}
 
 
 def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
@@ -30,15 +31,37 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
     minimum_steel = minimum_steel_area(height, width)
     b = width
     d = height - cobrimento
-    dominios = dominios_y(d)
-    md = stresses['positive_moment'] * 1.4
+    d_line = cobrimento
+    x_domains = set_domains(d)
+    m_d = stresses['positive_moment'] * 1.4
     fcd = fck / 1.4
-    x = 1.25 * d * (1 - math.sqrt(1 - md / (0.425 * b * math.pow(d, 2) * fcd)))
+    e_yd = 0.00207 # fyd/Es = 43.48/21000
+    x = 1.25 * d * (1 - math.sqrt(1 - m_d / (0.425 * b * math.pow(d, 2) * fcd)))
 
-    if x < dominios['x23']:
+    if x < x_domains['x23']:
         print('Dominio 2')
+        as_simple = m_d / (fyd * (d - 0.4 * x))
 
-    elif x < dominios['x34']:
+    elif x < x_domains['x34']:
         print('Dominio 3')
-    as_simple = md / (fyd * (d - 0.4 * x))
+    elif x > x_domains['x_lim']:
+        # lembrar que => y = 0,=.8 * x
+        # x_4 = d / 2
+        x_4 = x_domains['x_lim']
+        m_wd = 0.68 * b * x_4 * fcd * (d - 0.4 * x_4)
+        r_sd1 = m_wd / (d - 0.4 * x_4)
+        e_s2 = 0.0035 * (x_4 - d_line) / x_4
+
+        if e_s2 >= e_yd:
+            fyd = fyd
+
+        as_line = (m_d - m_wd) / ( fyd * (d - d_line))
+
+        as_simple = 1
+
+        as_total = r_sd1 / fyd
+
+        delta_m = m_d - m_wd
+
+
     print("Armadura necesária: {a:.2f} cm2".format(a=as_simple))
