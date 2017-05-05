@@ -1,5 +1,7 @@
 import math
 
+global fck, fyd, height, width, beam_length, load, cobrimento
+
 
 def isostatic_stress(beam_length, beam_load):
     shear_stress = beam_length * beam_load / 2
@@ -22,10 +24,9 @@ def dominios_y(d):
     return {'x23': x_2_lim, 'x34': x_3_lim}
 
 
-def beam_design():
-    global fck, fyd, height, width, length, load, cobrimento
-    # globals(fck, fyd, height, width, length, load, cobrimento)
-    stresses = isostatic_stress(length, load)
+def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
+    # global fck, fyd, height, width, beam_length, load, cobrimento
+    stresses = isostatic_stress(beam_length, load)
     minimum_steel = minimum_steel_area(height, width)
     b = width
     d = height - cobrimento
@@ -39,5 +40,5 @@ def beam_design():
 
     elif x < dominios['x34']:
         print('Dominio 3')
-    as_simples = md / (fyd * (d - 0.4 * x))
-    print(as_simples)
+    as_simple = md / (fyd * (d - 0.4 * x))
+    print("Armadura necesária: {a:.2f} cm2".format(a=as_simple))

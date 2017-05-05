@@ -14,9 +14,9 @@ def create_table():
               'height REAL,'
               'width REAL,'
               'length REAL,'
-              'load REAL, '
-              'fck REAL, '
-              'cobrimento REAL'
+              'load REAL,'
+              'fck REAL,'
+              'cobrimento REAL,'
               'positive_armor REAL,'
               'negative_armor REAL,'
               'shear_armor REAL)')
