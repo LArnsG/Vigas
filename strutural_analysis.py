@@ -61,9 +61,9 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
         # lembrar que => y = 0.8 * x
         # x_4 = d / 2
         x_4 = x_domains['x_lim']
-        m_wd = 0.68 * b * x_4 * fcd * (d - 0.4 * x_4)
-        r_sd1 = m_wd / (d - 0.4 * x_4)
-        e_s2 = 0.0035 * (x_4 - d_line) / x_4
+        # m_wd = 0.68 * b * x_4 * fcd * (d - 0.4 * x_4)
+        # r_sd1 = m_wd / (d - 0.4 * x_4)
+        # e_s2 = 0.0035 * (x_4 - d_line) / x_4
 
         # if e_s2 >= e_yd:
         #     fyd = fyd
@@ -71,9 +71,9 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
         # as_line = (m_d - m_wd) / (fyd * (d - d_line))
         # as_total = r_sd1 / fyd
         # delta_m = m_d - m_wd
-        as_line = m_d - 0.85 * fcd * b * 0.8 * x_4 * (d - 0.4 * x_4) / (fyd * (d - d_line))
+        as_line = (m_d - 0.85 * fcd * b * (0.8 * x_4) * (d - 0.4 * x_4)) / (fyd * (d - d_line))
 
-        as_simple = (0.85 * fcd * b * 0.8 * x_4 + as_line * fyd) / fyd
+        as_simple = (0.85 * fcd * b * (0.8 * x_4) + as_line * fyd) / fyd
 
         print("Armaduras necessárias:")
         print("As = {a:.2f} cm2".format(a=as_simple))
