@@ -38,14 +38,15 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
     e_yd = 0.00207 # fyd/Es = 43.48/21000
     x = 1.25 * d * (1 - math.sqrt(1 - m_d / (0.425 * b * math.pow(d, 2) * fcd)))
 
-    if x < x_domains['x23']:
-        print('Dominio 2')
+    if x < x_domains['x34']:
         as_simple = m_d / (fyd * (d - 0.4 * x))
+        if x_domains['x34'] > x > x_domains['x23']:
+            print('Dominio 3')
+        else:
+            print('Dominio 2')
 
-    elif x < x_domains['x34']:
-        print('Dominio 3')
-    elif x > x_domains['x_lim']:
-        # lembrar que => y = 0,=.8 * x
+    else: # x > x_domains['x_lim']:
+        # lembrar que => y = 0.8 * x
         # x_4 = d / 2
         x_4 = x_domains['x_lim']
         m_wd = 0.68 * b * x_4 * fcd * (d - 0.4 * x_4)
@@ -55,7 +56,7 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
         if e_s2 >= e_yd:
             fyd = fyd
 
-        as_line = (m_d - m_wd) / ( fyd * (d - d_line))
+        as_line = (m_d - m_wd) / (fyd * (d - d_line))
 
         as_simple = 1
 
@@ -65,3 +66,7 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
 
 
     print("Armadura necesária: {a:.2f} cm2".format(a=as_simple))
+
+
+def beam_reinforcement():
+    print('barras')
