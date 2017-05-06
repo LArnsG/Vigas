@@ -7,6 +7,7 @@ def isostatic_stress(beam_length, beam_load):
     shear_stress = beam_length * beam_load / 2
     positive_moment = (beam_load * math.pow(beam_length, 2)) / 8
 
+    print('Esforços, cortante: {a:.2f} kN, momento: {b:.2f} kN.cm'.format(a=shear_stress, b=positive_moment))
     return {'shear': shear_stress, 'positive_moment': positive_moment}
 
 
@@ -22,7 +23,7 @@ def set_domains(d):
     x_2_lim = 0.26 * d
     x_3_lim = 0.63 * d
     x_lim = 0.45 * d
-    return {'x23': x_2_lim, 'x34': x_3_lim, 'xlim': x_lim}
+    return {'x_23': x_2_lim, 'x_34': x_3_lim, 'x_lim': x_lim}
 
 
 def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
@@ -46,12 +47,14 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
 
     print('x: {a:.2f} cm'.format(a=x))
 
-    if x < x_domains['x34']:
+    if x < x_domains['x_34']:
         as_simple = m_d / (fyd * (d - 0.4 * x))
-        if x_domains['x34'] > x > x_domains['x23']:
+        if x_domains['x_34'] > x > x_domains['x_23']:
             print('Dominio 3')
         else:
             print('Dominio 2')
+
+        print("Armadura necessária: {a:.2f} cm2".format(a=as_simple))
 
     else: # x > x_domains['x_lim']:
         print('Dominio 4')
@@ -62,8 +65,8 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
         r_sd1 = m_wd / (d - 0.4 * x_4)
         e_s2 = 0.0035 * (x_4 - d_line) / x_4
 
-        if e_s2 >= e_yd:
-            fyd = fyd
+        # if e_s2 >= e_yd:
+        #     fyd = fyd
 
         # as_line = (m_d - m_wd) / (fyd * (d - d_line))
         # as_total = r_sd1 / fyd
@@ -72,13 +75,12 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
 
         as_simple = (0.85 * fcd * b * 0.8 * x_4 + as_line * fyd) / fyd
 
-        print("Armaduras necesárias:")
+        print("Armaduras necessárias:")
         print("As = {a:.2f} cm2".format(a=as_simple))
         print("As' = {a:.2f} cm2".format(a=as_line))
 
 
 
-    print("Armadura necesária: {a:.2f} cm2".format(a=as_simple))
 
 
 def beam_reinforcement():
