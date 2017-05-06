@@ -34,11 +34,15 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
     d_line = cobrimento
     x_domains = set_domains(d)
     m_d = stresses['positive_moment'] * 1.4
-    print('Momento de projeto = {md:.2f} kN/cm²'.format(a=m_d))
+    print('Momento de projeto = {a:.2f} kN/cm²'.format(a=m_d))
 
     fcd = fck / 1.4
     e_yd = 0.00207 # fyd/Es = 43.48/21000
-    x = 1.25 * d * (1 - math.sqrt(1 - m_d / (0.425 * b * math.pow(d, 2) * fcd)))
+    raiz = (1 - m_d / (0.425 * b * math.pow(d, 2) * fcd))
+    # if raiz < 0:
+    #     print('negativo')
+
+    x = 1.25 * d * (1 - math.sqrt(raiz))
 
     print('x: {a:.2f} cm'.format(a=x))
 
