@@ -34,9 +34,13 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
     d_line = cobrimento
     x_domains = set_domains(d)
     m_d = stresses['positive_moment'] * 1.4
+    print('Momento de projeto = {md:.2f} kN/cm²'.format(a=m_d))
+
     fcd = fck / 1.4
     e_yd = 0.00207 # fyd/Es = 43.48/21000
     x = 1.25 * d * (1 - math.sqrt(1 - m_d / (0.425 * b * math.pow(d, 2) * fcd)))
+
+    print('x: {a:.2f} cm'.format(a=x))
 
     if x < x_domains['x34']:
         as_simple = m_d / (fyd * (d - 0.4 * x))
@@ -46,6 +50,7 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
             print('Dominio 2')
 
     else: # x > x_domains['x_lim']:
+        print('Dominio 4')
         # lembrar que => y = 0.8 * x
         # x_4 = d / 2
         x_4 = x_domains['x_lim']
@@ -56,13 +61,17 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
         if e_s2 >= e_yd:
             fyd = fyd
 
-        as_line = (m_d - m_wd) / (fyd * (d - d_line))
+        # as_line = (m_d - m_wd) / (fyd * (d - d_line))
+        # as_total = r_sd1 / fyd
+        # delta_m = m_d - m_wd
+        as_line = m_d - 0.85 * fcd * b * 0.8 * x_4 * (d - 0.4 * x_4) / (fyd * (d - d_line))
 
-        as_simple = 1
+        as_simple = (0.85 * fcd * b * 0.8 * x_4 + as_line * fyd) / fyd
 
-        as_total = r_sd1 / fyd
+        print("Armaduras necesárias:")
+        print("As = {a:.2f} cm2".format(a=as_simple))
+        print("As' = {a:.2f} cm2".format(a=as_line))
 
-        delta_m = m_d - m_wd
 
 
     print("Armadura necesária: {a:.2f} cm2".format(a=as_simple))
