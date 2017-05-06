@@ -14,5 +14,6 @@ data.create_table()
 # data.data_entry(beam_name, height, width, beam_length, load, fck, cobrimento, 0, 0, 0)
 
 print('Começo da analise')
-structural.beam_design(fck, fyd, height, width, beam_length, load, cobrimento)
+# structural.beam_design(fck, fyd, height, width, beam_length, load, cobrimento)
 
+data.create_steel_area_table()
