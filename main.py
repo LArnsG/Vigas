@@ -22,3 +22,5 @@ data.create_steel_area_table()
 # print(data.get_steel_area('5.0'))
 print(data.get_steel_area(5.0))
 # print(data.get_steel_area('8.0'))
+
+data.close_conection()
