@@ -47,5 +47,10 @@ def create_steel_area_table():
         steel_area[i] = area
     # print(steel_area)
     for x in steel_area:
-
+        c.execute(' INSERT INTO steel_area('
+                  'bitola, area)'
+                  'VALUES(?, ?)',
+                  (x, steel_area[x]))
         print(x)
+        print(steel_area[x])
+
