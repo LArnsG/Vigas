@@ -24,7 +24,7 @@ def create_table():
               'shear_armor REAL)')
 
     c.execute('CREATE TABLE IF NOT EXISTS steel_area('
-              'bitola TEXT,'
+              'bitola REAL,'
               'area REAL)')
 
 
@@ -44,21 +44,18 @@ def create_steel_area_table():
 
     for i in bitolas:
         area = math.pow(i * .5, 2) * 3.14
-        steel_area[i] = area
+        # steel_area[i] = area
 
-    for x in steel_area:
-        print(x)
+    # for x in steel_area:
+    #     print(x)
 
         # conn = sqlite3.connect('beams_data.db')
         # c = conn.cursor()
 
-        c.execute(' INSERT INTO steel_area'
-                  '(bitola, area)'
-                  'VALUES(?, ?)',
-                  (x, steel_area[x]))
+        c.execute("INSERT INTO steel_area (bitola, area) VALUES (?, ?)", (i, area))
 
         conn.commit
-        print(steel_area[x])
+        print(i)
 
 
 def get_steel_area(bitola):
