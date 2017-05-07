@@ -1,5 +1,6 @@
 import vigas_database as data
-import strutural_analysis as structural
+# import strutural_analysis as analysis
+import design
 
 beam_name = 'v1' #input('Nome da viga:')
 height = 40 #int(input('Altura da viga [cm]:'))
@@ -14,6 +15,6 @@ data.create_table()
 # data.data_entry(beam_name, height, width, beam_length, load, fck, cobrimento, 0, 0, 0)
 
 print('Começo da analise')
-# structural.beam_design(fck, fyd, height, width, beam_length, load, cobrimento)
+# design.beam_design(fck, fyd, height, width, beam_length, load, cobrimento)
 
 data.create_steel_area_table()

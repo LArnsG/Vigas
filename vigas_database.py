@@ -45,6 +45,7 @@ def create_steel_area_table():
     for i in bitolas:
         area = math.pow(i * .5, 2) * 3.14
         steel_area[i] = area
-    print(steel_area)
+    # print(steel_area)
     for x in steel_area:
+
         print(x)
