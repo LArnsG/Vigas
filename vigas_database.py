@@ -45,12 +45,22 @@ def create_steel_area_table():
     for i in bitolas:
         area = math.pow(i * .5, 2) * 3.14
         steel_area[i] = area
-    # print(steel_area)
+
     for x in steel_area:
-        c.execute(' INSERT INTO steel_area('
-                  'bitola, area)'
+        print(x)
+
+        # conn = sqlite3.connect('beams_data.db')
+        # c = conn.cursor()
+
+        c.execute(' INSERT INTO steel_area'
+                  '(bitola, area)'
                   'VALUES(?, ?)',
                   (x, steel_area[x]))
-        print(x)
+
+        conn.commit
         print(steel_area[x])
+
+
+def get_steel_area(bitola):
+    c.execute("SELECT * FROM steel_area WHERE bitola = {0}".format(bitola))
 
