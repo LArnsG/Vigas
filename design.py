@@ -1,5 +1,5 @@
 import math
-
+import vigas_database as data
 import strutural_analysis as analysis
 
 
@@ -59,8 +59,7 @@ def beam_design(fck, fyd, height, width, beam_length, load, cobrimento):
         print("As' = {a:.2f} cm2".format(a=as_line))
 
 
-
-
-
 def beam_reinforcement():
-    print('barras')
+    # pegar todas bitolas, realizar comparativo com areas
+    data.get_steel_area(8.0)
+

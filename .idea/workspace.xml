@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e76fc6a7-6a13-4992-88c2-d5e12c3b94ae" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/design.py" afterPath="$PROJECT_DIR$/design.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,30 +14,14 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.60418904">
+    <splitter split-orientation="horizontal" split-proportion="0.50813514">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="vigas_database.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/vigas_database.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#14#0" expanded="true" />
-                    <element signature="e#208#559#0" expanded="false" />
-                    <element signature="e#793#1163#0" expanded="false" />
-                    <element signature="e#1505#1576#0" expanded="false" />
-                    <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="design.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/design.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+                <state relative-caret-position="453">
+                  <caret line="62" column="51" lean-forward="true" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                   </folding>
@@ -49,7 +33,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="462">
@@ -67,6 +51,21 @@
                 <state relative-caret-position="252">
                   <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="vigas_database.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/vigas_database.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="279">
+                  <caret line="50" column="16" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+                  <folding>
+                    <element signature="e#0#14#0" expanded="true" />
+                    <element signature="e#208#559#0" expanded="false" />
+                    <element signature="e#793#1163#0" expanded="false" />
+                    <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -407,7 +406,6 @@
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#208#559#0" expanded="false" />
             <element signature="e#793#1163#0" expanded="false" />
-            <element signature="e#1505#1576#0" expanded="false" />
             <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
           </folding>
         </state>
@@ -431,7 +429,6 @@
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#208#559#0" expanded="false" />
             <element signature="e#793#1163#0" expanded="false" />
-            <element signature="e#1505#1576#0" expanded="false" />
             <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
           </folding>
         </state>
@@ -463,7 +460,6 @@
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#208#559#0" expanded="false" />
             <element signature="e#793#1163#0" expanded="false" />
-            <element signature="e#1505#1576#0" expanded="false" />
             <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
           </folding>
         </state>
@@ -495,7 +491,6 @@
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#208#559#0" expanded="false" />
             <element signature="e#793#1163#0" expanded="false" />
-            <element signature="e#1505#1576#0" expanded="false" />
             <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
           </folding>
         </state>
@@ -527,7 +522,6 @@
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#208#559#0" expanded="false" />
             <element signature="e#793#1163#0" expanded="false" />
-            <element signature="e#1505#1576#0" expanded="false" />
             <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
           </folding>
         </state>
@@ -559,7 +553,6 @@
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#208#559#0" expanded="false" />
             <element signature="e#793#1163#0" expanded="false" />
-            <element signature="e#1505#1576#0" expanded="false" />
             <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
           </folding>
         </state>
@@ -591,7 +584,6 @@
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#208#559#0" expanded="false" />
             <element signature="e#793#1163#0" expanded="false" />
-            <element signature="e#1505#1576#0" expanded="false" />
             <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
           </folding>
         </state>
@@ -617,20 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vigas_database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#208#559#0" expanded="false" />
-            <element signature="e#793#1163#0" expanded="false" />
-            <element signature="e#1505#1576#0" expanded="false" />
-            <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/strutural_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -639,10 +617,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vigas_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="50" column="16" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#208#559#0" expanded="false" />
+            <element signature="e#793#1163#0" expanded="false" />
+            <marker date="1494197674881" expanded="true" signature="803:816" ph="&quot;...&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/design.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="453">
+          <caret line="62" column="51" lean-forward="true" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
